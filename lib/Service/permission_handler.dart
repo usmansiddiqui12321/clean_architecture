@@ -9,7 +9,7 @@ class PermissionHandlerService {
   ///  * Check if a specific permission is granted
   Future<bool> isPermissionGranted(Permission permission) async {
     final status = await permission.status;
-    log('Checking permission status for: $permission');
+    log('Permission status for $permission: $status');
     return status.isGranted;
   }
 
@@ -24,8 +24,11 @@ class PermissionHandlerService {
         return false;
       case PermissionStatus.permanentlyDenied:
         log('Permission permanently denied for $permission. Opening app settings...');
-        await openAppSettings(); // Open app settings to allow the user to grant permission manually
+        await openAppSettings();
         return false;
+      case PermissionStatus.limited:
+        log('Permission limited for $permission. Partial access granted.');
+        return true;
       default:
         log('Permission request result for $permission: ${status.isGranted}');
         return status.isGranted;
@@ -37,7 +40,7 @@ class PermissionHandlerService {
       log('Permission already granted for: $permission');
       return true;
     } else {
-      log('Permission not granted for: $permission, requesting now...');
+      log('Permission not granted for: $permission');
       return false;
     }
   }
