@@ -21,6 +21,7 @@ class HoverCardState extends State<HoverCard> {
         transform:
             _isHovered ? (Matrix4.identity()..scale(1.02)) : Matrix4.identity(),
         child: Card(
+          shadowColor: Colors.grey,
           elevation: _isHovered ? 5 : 4,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),

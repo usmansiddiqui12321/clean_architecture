@@ -1,3 +1,4 @@
+import 'package:clean_architecture/Constants/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -82,7 +83,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   onPressed: () {
                     // Edit Profile Action
                   },
-                  icon: const Icon(Icons.edit),
+                  icon: Icon(
+                    Icons.edit,
+                    color: Theme.of(context).brightness == Brightness.dark
+                        ? AppColors.surface
+                        : AppColors.backgroundLight,
+                  ),
                   label: const Text('Edit Profile'),
                   style: ElevatedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(
