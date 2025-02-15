@@ -1,7 +1,5 @@
-import 'package:clean_architecture/Controller/theme_controller.dart';
 import 'package:clean_architecture/Service/permission_handler.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 class PermissionScreen extends StatefulWidget {

@@ -1,6 +1,5 @@
 import 'package:clean_architecture/Constants/app_colors.dart';
 import 'package:clean_architecture/Controller/navigator_controller.dart';
-import 'package:clean_architecture/Controller/theme_controller.dart';
 import 'package:clean_architecture/Screens/home_screen.dart';
 import 'package:clean_architecture/Screens/permission_screen.dart';
 import 'package:clean_architecture/Screens/profile_screen.dart';
